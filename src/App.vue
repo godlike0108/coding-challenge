@@ -26,13 +26,13 @@
                 v-if="item.type === 'IN_PROGRESS'"
                 @click="toggleType(index)"
                 type="md-checkbox"
-                size="36"/>
+                size="32"/>
               <Icon
                 color="#c5c8ce"
                 v-if="item.type === 'COMPLETE'"
                 @click="toggleType(index)"
                 type="md-square-outline"
-                size="36"/>
+                size="32"/>
             </Col>
           </Row>
         </header>
@@ -104,6 +104,7 @@ export default {
   display: block;
   width: 60%;
   min-width: 300px;
+  margin-bottom: 20px;
   &-header{
     &-text {
       width :80%;
@@ -112,6 +113,7 @@ export default {
       display: flex;
       justify-content: center;
       cursor: pointer;
+      line-height: 36px;
     }
   }
 }

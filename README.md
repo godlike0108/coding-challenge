@@ -4,4 +4,6 @@
 
 ## Build Setup
 
-`node server` to start
+1. `node server` to start
+2. Browser localhost:3000
+
