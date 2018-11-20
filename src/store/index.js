@@ -19,7 +19,14 @@ const store = new Vuex.Store({
     ]
   },
   mutations: {
-
+    addTask (state, task) {
+      state.todoList.push(task)
+    },
+    toggleTaskType (state, index) {
+      state.todoList[index].type === 'IN_PROGRESS'
+        ? state.todoList[index].type = 'COMPLETE'
+        : state.todoList[index].type = 'IN_PROGRESS'
+    }
   },
   actions: actions
 })
