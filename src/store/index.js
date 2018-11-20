@@ -7,18 +7,12 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    todoList: [
-      {
-        type: 'IN_PROGRESS',
-        text: 'Mop the floor.'
-      },
-      {
-        type: 'COMPLETE',
-        text: 'Read some code.'
-      }
-    ]
+    todoList: []
   },
   mutations: {
+    getTasks (state, tasks) {
+      state.todoList = tasks
+    },
     addTask (state, task) {
       state.todoList.push(task)
     },
@@ -26,6 +20,11 @@ const store = new Vuex.Store({
       state.todoList[index].type === 'IN_PROGRESS'
         ? state.todoList[index].type = 'COMPLETE'
         : state.todoList[index].type = 'IN_PROGRESS'
+    }
+  },
+  getters: {
+    tasks (state) {
+      return state.todoList
     }
   },
   actions: actions

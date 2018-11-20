@@ -51,6 +51,9 @@
 <script>
 
 export default {
+  mounted () {
+    this.$store.dispatch('getTasks')
+  },
   name: 'App',
   data () {
     return {
@@ -63,7 +66,7 @@ export default {
   },
   computed: {
     todoList () {
-      return this.$store.state.todoList
+      return this.$store.getters.tasks
     }
   },
   methods: {
@@ -71,7 +74,7 @@ export default {
       if (!this.newTask.text) {
         this.feedback = 'Please enter text before send.'
       }
-      this.$store.commit('addTask', this.newTask)
+      this.$store.dispatch('postTask', this.newTask)
       this.reset()
     },
     reset () {
@@ -82,7 +85,7 @@ export default {
       this.feedback = ''
     },
     toggleType (index) {
-      this.$store.commit('toggleTaskType', index)
+      this.$store.dispatch('putTask', index)
     }
   }
 
