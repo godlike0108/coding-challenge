@@ -36,13 +36,6 @@
             </Col>
           </Row>
         </header>
-        <div class="task-content">
-          
-        </div>
-        <div class="task-footer">
-          <Button class="task-button-cancel">Cancel</Button>
-          <Button class="task-button-add">Add Task</Button>
-        </div>
       </li>
     </ul>
   </div>
